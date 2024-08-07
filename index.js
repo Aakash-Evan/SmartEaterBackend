@@ -15,6 +15,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.get('/', (req, res) => {
+    res.send('Hello, World!');
+  });
+
 // Define a meal schema
 const mealSchema = new mongoose.Schema({
     name: String,
@@ -71,3 +75,4 @@ app.post('/logMeal', async (req, res) => {
 });
 
 app.listen(5001, () => console.log('Server running on port 5001'));
+export default app;
